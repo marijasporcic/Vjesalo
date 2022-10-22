@@ -12,3 +12,19 @@ neiskoristena_slova.extend(abeceda)
 tocna_slova = [] 
 netocna_slova = [] 
 izabrana_rijec = "" 
+
+pocetak = input("Dobro došli!\nAko želite igrati vješalo upišite DA > ")
+
+while(pocetak == "DA"):
+    igraci = [] 
+    broj_igraca = int(input("Unesite broj igrača > "))
+
+    
+    for i in range (0, broj_igraca):
+        nadimak = input("Unesi nadimak " + str(i+1) + ". igraca > ")
+        igraci.append(nadimak)
+        bodovi[nadimak] = 0
+
+    
+    pocetak = input("Igra je gotova!\nAko želite opet igrati upišite DA > ")
+    
