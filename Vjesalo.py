@@ -15,6 +15,15 @@ izabrana_rijec = ""
 
 pocetak = input("Dobro došli!\nAko želite igrati vješalo upišite DA > ")
 
+def zamijeni_s_crticama(skrivena_rijec):
+    
+    skrivena_rijec = pocetna_rijec 
+    
+    for neiskoristeno_slovo in neiskoristena_slova:
+        if neiskoristeno_slovo in izabrana_rijec:
+            skrivena_rijec = skrivena_rijec.replace(neiskoristeno_slovo, "_")    
+    return skrivena_rijec
+
 while(pocetak == "DA"):
     igraci = [] 
     broj_igraca = int(input("Unesite broj igrača > "))
