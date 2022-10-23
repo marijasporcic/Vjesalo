@@ -14,6 +14,7 @@ netocna_slova = []
 izabrana_rijec = "" 
 
 pocetak = input("Dobro došli!\nAko želite igrati vješalo upišite DA > ")
+pocetak=pocetak.upper()
 
 def zamijeni_s_crticama(skrivena_rijec):
     
