@@ -1,10 +1,13 @@
 import random
 
-baza_rijeci=["MAČKA", "PAS", "IGRAČKA", "LjEŠNjAK"] 
+baza_rijeci=["MAČKA", "PAS", "IGRAČKA", "LjEŠNjAK", "PRST", "CVIJET", "LIST", "BIOLOGIJA", "KEMIJA","FIZIKA", "INFORMATIKA", "RIJEČ", "ZAMJENICA", "IMENICA"] 
 abeceda= "Dž - Lj - Nj - A - B - C - Č - Ć - D - Đ - E - F - G - H - I - J - K - L - M - N - O - P - R - S - Š - T - U - V - Z - Ž" 
 abeceda = abeceda. split(" - ") 
 
 bodovi={}
+
+def novo_slovo(krivih):
+    return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla 
 
 neiskoristena_slova = []
 neiskoristena_slova.extend(abeceda) 
@@ -59,7 +62,43 @@ while(pocetak == "DA"):
         index = izabrana_rijec.index("ž")
         izabrana_rijec[index-1] = "Dž" 
         izabrana_rijec.pop(index)
+    skrivena_rijec = "" 
+    krivih = 0
+    najvise_krivih = 6
+    index_igraca = 0
+    skrivena_rijec = zamijeni_s_crticama(skrivena_rijec) 
 
+    
+    while(krivih < 6):
+
+ 
+        print("Na redu je " + igraci[index_igraca] + ".")
+        print(skrivena_rijec)
+
+        krivih, uspjeh = novo_slovo(krivih) 
+        skrivena_rijec = zamijeni_s_crticama(skrivena_rijec) 
+
+        
+        if(not uspjeh):
+            
+            index_igraca = index_igraca + 1
+            
+            if(index_igraca == len(igraci)):
+                index_igraca = 0
+        else:
+            bodovi[igraci[index_igraca]] += 1 
+
+        
+        if(skrivena_rijec == pocetna_rijec): 
+            break 
+
+        
+        print("------------------------------------------\n\n")
+
+    if(pocetna_rijec == skrivena_rijec): 
+        print("Čestitam! Pogodili ste riječ " + skrivena_rijec)
+    else:
+        print("Nažalost niste uspjeli pogoditi riječ.")
     
     pocetak = input("Igra je gotova!\nAko želite opet igrati upišite DA > ")
     
