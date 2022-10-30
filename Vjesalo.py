@@ -25,7 +25,39 @@ crtezi = ["  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========",
 
 
 def novo_slovo(krivih):
-    return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla 
+    slovo = "" 
+    while(slovo == ""):
+        slovo = input("Unesi slovo > ")
+        if(len(slovo) == 1 and slovo.upper() in abeceda):
+            slovo = slovo.upper()
+        elif(slovo == "dž" or slovo == "DŽ" or slovo == "Dž"):
+            slovo = "Dž"
+        elif(slovo == "lj" or slovo == "LJ" or slovo == "Lj"):
+            slovo = "Lj"
+        elif(slovo == "nj" or slovo == "NJ" or slovo == "Nj"):
+            slovo = "Nj"
+        else: 
+            print("Ovo slovo ne postoji.")
+            slovo = ""
+            
+    if(slovo != "" and slovo not in neiskoristena_slova):
+            print("Ovo slovo je već isprobano. Probaj neko drugo slovo: " + str(neiskoristena_slova))
+            slovo = ""
+            
+    elif(slovo in neiskoristena_slova):
+            neiskoristena_slova.remove(slovo)
+        
+    if(slovo in izabrana_rijec):
+        tocna_slova.append(slovo)
+        uspjesno = True
+        print("Bravo!")
+    else:
+        netocna_slova.append(slovo)
+        print("Nažalost to slovo nije u riječi.")
+        krivih = krivih + 1
+        uspjesno = False
+        return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla
+
 
 neiskoristena_slova = []
 neiskoristena_slova.extend(abeceda) 
