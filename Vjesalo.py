@@ -15,6 +15,15 @@ f.close()
 
 bodovi={}
 
+crtezi = ["  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========", 
+              "  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========",
+              "  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========",
+              "  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========",
+              "  +---+\n  |   |\n  O   |\n /|\  |\n      |\n      |\n=========",
+              "  +---+\n  |   |\n  O   |\n /|\  |\n /    |\n      |\n=========",
+              "  +---+\n  |   |\n  O   |\n /|\  |\n / \  |\n      |\n========="]
+
+
 def novo_slovo(krivih):
     return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla 
 
@@ -80,7 +89,7 @@ while(pocetak == "DA"):
     
     while(krivih < 6):
 
- 
+        print(crtezi[krivih])
         print("Na redu je " + igraci[index_igraca] + ".")
         print(skrivena_rijec)
 
