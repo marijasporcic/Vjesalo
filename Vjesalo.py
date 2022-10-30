@@ -55,7 +55,8 @@ while(pocetak == "DA"):
         nadimak = input("Unesi nadimak " + str(i+1) + ". igraca > ")
         igraci.append(nadimak)
         bodovi[nadimak] = 0
-        
+    bira=random.choice(igraci)
+    print("Riječ u ovoj igri bira "+str(bira)+".")     
     nacin = ""
     while(nacin != "A" and nacin != "B"):
         nacin = input("Ako želiš izabrati riječ upiši: A, a ako ne znaš koju riječ želiš upiši: B i riječ će biti izabrana iz baze > ")
@@ -80,6 +81,7 @@ while(pocetak == "DA"):
         index = izabrana_rijec.index("ž")
         izabrana_rijec[index-1] = "Dž" 
         izabrana_rijec.pop(index)
+    maknuti=igraci.pop(igraci.index(bira))
     skrivena_rijec = "" 
     krivih = 0
     najvise_krivih = 6
