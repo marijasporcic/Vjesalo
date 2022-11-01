@@ -42,11 +42,11 @@ def novo_slovo(krivih):
             print("Ovo slovo ne postoji.")
             slovo = ""
             
-    if(slovo != "" and slovo not in neiskoristena_slova):
+        if(slovo != "" and slovo not in neiskoristena_slova):
             print("Ovo slovo je već isprobano. Probaj neko drugo slovo: " + str(neiskoristena_slova))
             slovo = ""
             
-    elif(slovo in neiskoristena_slova):
+        elif(slovo in neiskoristena_slova):
             neiskoristena_slova.remove(slovo)
         
     if(slovo in izabrana_rijec):
@@ -58,7 +58,7 @@ def novo_slovo(krivih):
         print("Nažalost to slovo nije u riječi.")
         krivih = krivih + 1
         uspjesno = False
-        return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla
+    return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla
 
 
 neiskoristena_slova = []
