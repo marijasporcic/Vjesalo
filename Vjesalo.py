@@ -152,6 +152,39 @@ while(pocetak == "DA"):
     else:
         print("Nažalost niste uspjeli pogoditi riječ.")
     
+    #https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
+    bodovi = {k: v for k, v in sorted(bodovi.items(), key=lambda item: item[1], reverse=True)}
+
+    for ime in bodovi.keys():
+        print(ime + " ---> " + str(bodovi[ime]))
+        
+        if(ime in leaderboard.keys()):
+            
+            stari_rezultat = leaderboard[ime]
+            novi_rezultat = bodovi[ime]
+            if(novi_rezultat > stari_rezultat): 
+                leaderboard[ime] = novi_rezultat 
+        else: 
+            leaderboard[ime] = bodovi[ime] 
+
+
+    print("-----------------------------------------")
+    print("Bodovi [sve igre ikad]: ")
+
+    leaderboard = {k: v for k, v in sorted(leaderboard.items(), key=lambda item: item[1], reverse=True)}
+
+    for ime in leaderboard.keys():
+        print(ime + " ---> " + str(leaderboard[ime]))
+
+    
     pocetak = input("Igra je gotova!\nAko želite opet igrati upišite DA > ")
     
-   
+    
+zapis = ""
+for ime in leaderboard.keys(): 
+    zapis += ime + " " + str(leaderboard[ime]) + "\n" 
+
+
+f = open("scores.txt", "w")
+f.write(zapis)
+f.close()
