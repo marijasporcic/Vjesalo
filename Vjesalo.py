@@ -4,6 +4,7 @@ baza_rijeci=["MAČKA", "PAS", "IGRAČKA", "LjEŠNjAK", "PRST", "CVIJET", "LIST",
 abeceda= "Dž - Lj - Nj - A - B - C - Č - Ć - D - Đ - E - F - G - H - I - J - K - L - M - N - O - P - R - S - Š - T - U - V - Z - Ž" 
 abeceda = abeceda. split(" - ") 
 
+
 leaderboard = {}
 f = open("scores.txt", "r", encoding = "UTF8")
 lines = f.readlines()
@@ -12,6 +13,7 @@ for line in lines:
     leaderboard[nadimak.strip()] = int(bodovi.strip())
 
 f.close()
+
 
 bodovi={}
 
