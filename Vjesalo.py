@@ -58,7 +58,7 @@ def novo_slovo(krivih):
         print("Nažalost to slovo nije u riječi.")
         krivih = krivih + 1
         uspjesno = False
-    return krivih, uspjesno #samo sam si postavila ime funkcije, argumente koje mi prima i što želim da mi vrati jer mi treba u mom dijelu, ali ju ne slažem jer nije moj dio posla
+    return krivih, uspjesno 
 
 
 neiskoristena_slova = []
