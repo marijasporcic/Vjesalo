@@ -193,7 +193,10 @@ while(pocetak == "DA"):
 zapis = ""
 for ime in leaderboard.keys(): 
     zapis += ime + " " + str(leaderboard[ime]) + "\n" 
-
+    
+print(zapis.split("\n")[0:5])
+if len(zapis.split("\n"))<5:
+    print(zapis.split("\n")[0:len(zapis.split("\n"))])
 
 f = open("scores.txt", "w")
 f.write(zapis)
