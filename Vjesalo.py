@@ -90,10 +90,17 @@ while(pocetak == "DA"):
         igraci.append(nadimak)
         bodovi[nadimak] = 0
     bira=random.choice(igraci)
-    print("Riječ u ovoj igri bira "+str(bira)+".")     
+    if broj_igraca!=1:
+        print("Riječ u ovoj igri bira "+str(bira)+".")  
+         
     nacin = ""
     while(nacin != "A" and nacin != "B"):
-        nacin = input("Ako želiš izabrati riječ upiši: A, a ako ne znaš koju riječ želiš upiši: B i riječ će biti izabrana iz baze > ")
+        if broj_igraca==1:
+            nacin = "B"
+            print("Riječ je izabrana iz baze")
+        else:
+            nacin = input("Ako želiš izabrati riječ upiši: A, a ako ne znaš koju riječ želiš upiši: B i riječ će biti izabrana iz baze > ")
+        
         if nacin == "A":
             izabrana_rijec = input("Upiši riječ (upišite riječ velikim tiskanim slovima, osim Lj, Nj, Dž. Npr. PARADAJZ, LjEŠNjAK)> ")
             izabrana_rijec.strip()
@@ -115,7 +122,8 @@ while(pocetak == "DA"):
         index = izabrana_rijec.index("ž")
         izabrana_rijec[index-1] = "Dž" 
         izabrana_rijec.pop(index)
-    maknuti=igraci.pop(igraci.index(bira))
+    if nacin=="A":
+        maknuti=igraci.pop(igraci.index(bira))
     skrivena_rijec = "" 
     krivih = 0
     najvise_krivih = 6
