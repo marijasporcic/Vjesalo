@@ -139,22 +139,27 @@ while(pocetak == "DA"):
         print("Na redu je " + igraci[index_igraca] + ".")
         print(skrivena_rijec)
 
-        krivih, uspjeh = novo_slovo(krivih) 
-        skrivena_rijec = zamijeni_s_crticama(skrivena_rijec) 
+        izbor= input("Ako želiš pogađati slovo upiši 1, a ako želiš pogađati riječ upiši 2--->")
+        if izbor=="1":
+            krivih, uspjeh = novo_slovo(krivih)
+            skrivena_rijec = zamijeni_s_crticama(skrivena_rijec)
+            if(not uspjeh):
+                    
+                index_igraca = index_igraca + 1
+                
+                if(index_igraca == len(igraci)):
+                    index_igraca = 0
+            else:
+                bodovi[igraci[index_igraca]] += 1 
 
-        
-        if(not uspjeh):
-            
-            index_igraca = index_igraca + 1
-            
-            if(index_igraca == len(igraci)):
-                index_igraca = 0
-        else:
-            bodovi[igraci[index_igraca]] += 1 
-
-        
-        if(skrivena_rijec == pocetna_rijec): 
-            break 
+        elif izbor == "2":
+            skrivena_rijec=input("Upiši riječ koja misliš da je (upišite riječ velikim tiskanim slovima, osim Lj, Nj, Dž. Npr. PARADAJZ, LjEŠNjAK)--->")
+            if(skrivena_rijec != pocetna_rijec):
+                print("Nažalost niste pogodili riječ!")
+                index_igraca = index_igraca + 1
+                
+                if(index_igraca == len(igraci)):
+                    index_igraca = 0
 
         
         print("------------------------------------------\n\n")
