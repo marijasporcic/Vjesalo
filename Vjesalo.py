@@ -161,7 +161,7 @@ while(pocetak == "DA"):
                 
                 if(index_igraca == len(igraci)):
                     index_igraca = 0
-             else:
+            else:
                 bodovi[igraci[index_igraca]] += 5       
 
         
