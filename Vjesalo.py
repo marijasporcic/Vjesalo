@@ -162,7 +162,9 @@ while(pocetak == "DA"):
                 if(index_igraca == len(igraci)):
                     index_igraca = 0
             else:
-                bodovi[igraci[index_igraca]] += 5       
+                bodovi[igraci[index_igraca]] += 5 
+        if(skrivena_rijec == pocetna_rijec): 
+            break 
 
         
         print("------------------------------------------\n\n")
