@@ -139,7 +139,7 @@ while(pocetak == "DA"):
         print("Na redu je " + igraci[index_igraca] + ".")
         print(skrivena_rijec)
 
-        izbor= input("Ako želiš pogađati slovo upiši 1, a ako želiš pogađati riječ upiši 2--->")
+        izbor= input("Ako želiš pogađati slovo upiši 1, a ako želiš pogađati riječ upiši 2--->") #nudi se izbor pogađanja samo slova i cijele riječi
         if izbor=="1":
             krivih, uspjeh = novo_slovo(krivih)
             skrivena_rijec = zamijeni_s_crticama(skrivena_rijec)
