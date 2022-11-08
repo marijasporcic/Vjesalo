@@ -163,6 +163,7 @@ while(pocetak == "DA"):
         print("Čestitam! Pogodili ste riječ " + skrivena_rijec)
     else:
         print("Nažalost niste uspjeli pogoditi riječ.")
+        print("Izabrana riječ je "+pocetna_rijec+".")
     
     #https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
     bodovi = {k: v for k, v in sorted(bodovi.items(), key=lambda item: item[1], reverse=True)}
