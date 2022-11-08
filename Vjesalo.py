@@ -168,7 +168,7 @@ while(pocetak == "DA"):
     #https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
     bodovi = {k: v for k, v in sorted(bodovi.items(), key=lambda item: item[1], reverse=True)}
 
-    for ime in bodovi.keys(): 
+    for ime in bodovi.keys(): #ovom se petljom dodaju bodovi i oblikuje leaderboard
         print(ime + " ---> " + str(bodovi[ime]))
         
         if(ime in leaderboard.keys()):
