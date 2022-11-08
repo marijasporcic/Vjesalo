@@ -211,10 +211,7 @@ for ime in leaderboard.keys():
     zapis += ime + " " + str(leaderboard[ime]) + "\n" 
     
 
-if len(zapis.split("\n"))<5:
-    print(zapis.split("\n")[0:len(zapis.split("\n"))])
-else:
-    print(zapis.split("\n")[0:5])
+
 
 f = open("scores.txt", "w") #ovdje se u datoteku zapisuju rezultati igre
 f.write(zapis)
