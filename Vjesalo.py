@@ -155,6 +155,7 @@ while(pocetak == "DA"):
         elif izbor == "2":
             skrivena_rijec=input("Upiši riječ koja misliš da je (upišite riječ velikim tiskanim slovima, osim Lj, Nj, Dž. Npr. PARADAJZ, LjEŠNjAK)--->")
             if(skrivena_rijec != pocetna_rijec):
+                krivih=krivih+1
                 print("Nažalost niste pogodili riječ!")
                 index_igraca = index_igraca + 1
                 
